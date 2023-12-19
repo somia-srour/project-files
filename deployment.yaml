@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: srours
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: webapp
+  template:
+    metadata:
+      name: tryproject
+      labels:
+        app: webapp
+    spec:
+      containers:
+        - image: somiasrour/project
+          name: tryproj
+          imagePullPolicy: IfNotPresent
+          name: tryproject
+          ports:
+            - containerPort: 80
